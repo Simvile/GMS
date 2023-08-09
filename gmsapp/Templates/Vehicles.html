@@ -1,0 +1,263 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+  <br>
+  <div class="head form-control" style="background-color:whitesmoke; border: none;">
+    <p style="background-color: white; border: none;"><b style="background-color: transparent;">Vehicles :</b></p>
+  </div><br>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')" style="margin-right:3px;"><b><ion-icon
+          name="list-outline"></ion-icon>&nbsp;Vehicle List</b></button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')" style="margin-left:2px;"><b><ion-icon
+          name="add-circle-outline"></ion-icon>&nbsp;Add Vehicle</b></button>
+  </div>
+
+  <div id="London" class="tabcontent tab1">
+    <div class="row">
+      <div class="col-md-12">
+        <label class="form-control" style="background-color: whitesmoke; border: none;"><b>STEP : VEHICLE
+            LIST</b></label>
+      </div>
+      <div class="col-md-12">
+        <div class="list_search">
+          <input type="search" id="searchInput" class="searcher" placeholder="Search...">
+        </div>
+        <div class="list_container">
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th><b>#</b></th>
+                <th>Image</th>
+                <th>Model Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Date of manufacture</th>
+                <th>Engine No</th>
+                <th>Number Plate</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><img src="" alt="Vehicle image"></td>
+                <td>AMG</td>
+                <td>--</td>
+                <td>$00.00</td>
+                <td>2019/04/12</td>
+                <td>632.48</td>
+                <td>1234EC</td>
+                <td><button class="btn btn-danger">Edit</button></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><img src="" alt="Vehicle image"></td>
+                <td>GALARDO</td>
+                <td>--</td>
+                <td>$00.00</td>
+                <td>2019/04/12</td>
+                <td>632.48</td>
+                <td>1234EC</td>
+                <td><button class="btn btn-danger">Edit</button></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td><img src="" alt="Vehicle image"></td>
+                <td>GT500</td>
+                <td>--</td>
+                <td>$00.00</td>
+                <td>2019/04/12</td>
+                <td>632.48</td>
+                <td>1234EC</td>
+                <td><button class="btn btn-danger">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Paris" class="tabcontent">
+    <form action="SaveVehicle" method="post">
+      <div class="row Vehicles">
+        <div class="col-md-12">
+          <label class="form-control" style="background-color: whitesmoke; border: none;"><b>STEP : Add Vehicle
+              Details</b></label>
+        </div>
+        <div class="col-md-6" style="padding: 30px;">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b>Model Type:</b></p>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="dropdown-input" id="myDropdown" placeholder="Model Type" required />
+                  <div class="dropdown-list" id="myDropdownList">
+                    <div class="dropdown-item">Option 1</div>
+                    <div class="dropdown-item">Option 2</div>
+                    <div class="dropdown-item">Option 3</div>
+                    <!-- Add more options here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b>Model Name:</b></p>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="dropdown-input" id="myDropdown" placeholder="Model Name" required />
+                  <div class="dropdown-list" id="myDropdownList">
+                    <!-- <div class="dropdown-item">Option 1</div> -->
+                    <!-- Add more options here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b>Vehicle Brand:</b></p>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="dropdown-input" id="myDropdown" placeholder="Vehicle Brand" required />
+                  <div class="dropdown-list" id="myDropdownList">
+                    <!-- <div class="dropdown-item">Option 1</div> -->
+                    <!-- Add more options here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b>Fuel Type:</b></p>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="dropdown-input" id="myDropdown" placeholder="Fuel Type" required />
+                  <div class="dropdown-list" id="myDropdownList">
+                    <!-- <div class="dropdown-item">Option 1</div> -->
+                    <!-- Add more options here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p><b>Odometer reading:</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Odometer reading" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Gear Box:</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter GearBox" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Engine Number:</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter Engine Number" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Key Number:</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter Key No" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Number Plate:</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter Number Plate" required />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" style="padding: 30px;">
+          <div class="row">
+            <div class="col-md-4">
+              <p><b>Chasis Number :</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter Chasis Number" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Model Year :</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="Date" class="" id="myDropdown" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Number of Gears :</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter Number of gears" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Date of manufacture :</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="date" class="" id="myDropdown" placeholder="Enter Number Plate" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>GearBox Number :</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter GearBox Number" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Engine Size :</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter Engine Size" required />
+            </div>
+            <div class="col-md-4">
+              <p><b>Engine :</b></p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" class="" id="myDropdown" placeholder="Enter Engine" required />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6"><br>
+              <!-- ======= Upload images =========== -->
+              <h3>Vehicle Images</h3>
+              <hr>
+              <input type="file" id="imageInput" class="form-control" accept="image/*" multiple
+                placeholder="Uplaod Vehicle Images" required><br>
+              <div id="imageContainer"></div>
+              <!-- =========== Upload Ends ========== -->
+            </div>
+            <div class="col-md-6"><br>
+              <h3>Vehicle Color</h3>
+              <input type="text" class="dropdown-input" id="myDropdown" placeholder="Enter/Select Color" required />
+              <div class="dropdown-list" id="myDropdownList">
+                <!-- <div class="dropdown-item">Option 1</div> -->
+                <!-- Add more options here -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12"><br>
+          <div class="row">
+            <h3>Vehicle Description :</h3>
+            <hr>
+            <div class="col-md-9">
+              <textarea name="vehicleDescription" id="vehicleDescription" class="form-control" rows="5"
+                required></textarea>
+            </div>
+            <div class="col-md-3">
+              <br><br>
+              <button class="btn btn-primary form-control">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  {% endblock content %}

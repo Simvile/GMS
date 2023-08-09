@@ -1,0 +1,165 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+Dashboard Page
+{% endblock %}
+{% block content %}
+
+<div class="container">
+  <br>
+  <br>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')" style="margin-right:3px;"><b><ion-icon
+          name="list-outline"></ion-icon>&nbsp;Customer List</b></button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')" style="margin-left: 2px;"><b><ion-icon
+          name="add-circle-outline"></ion-icon>&nbsp;Add Customer</b></button>
+  </div>
+
+  <div id="London" class="tabcontent tab1">
+    <div class="row">
+      <div class="col-md-12">
+        <label class="form-control" style="background-color: whitesmoke; border: none;"><b>STEP : CUSTOMER
+            LIST</b></label>
+      </div>
+      <div class="col-md-12">
+        <div class="list_search">
+          <input type="search" id="searchInput" class="searcher" placeholder="Search...">
+        </div>
+        <div class="list_container">
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th><b>#</b></th>
+                <th>Profile</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>ID Number</th>
+                <th>Work No</th>
+                <th>Mobile No</th>
+                <th>Address</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for customer in customers %}
+              <tr>
+                <td>{{customer.id}}</td>
+                <td><img src="../static/assets/Images/Profile-Images/IMG-20230516-WA0084.jpg" alt="Profile Picture"></td>
+                <td>{{customer.fisrt_name}}</td>
+                <td>{{customer.second_name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.gender}}</td>
+                <td>{{customer.id_number}}</td>
+                <td>{{customer.work_number}}</td>
+                <td>{{customer.mobile_number}}</td>
+                <td>{{customer.street}}, {{customer.complex}}, {{customer.city}}, {{customer.country}}, {{customer.postal_code}}</td>
+                <td><button class="btn btn-primary">View</button></td>
+              </tr>
+              {% empty %}
+              <tr>
+                <td class="col-span-8">No Customers found</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="list_search">
+          <p><b>Showing</b></p>
+          <input type="text" class="cot" value="{{customers_num}}" readonly>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ================ Add Customer ======================= -->
+  <!-- ===================================================== -->
+  <div id="Paris" class="tabcontent">
+    <form method="post">{% csrf_token %}
+      <div class="row">
+        <div class="col-md-12">
+          <label class="form-control" style="background-color: whitesmoke; border: none;"><b>STEP : Add Customer
+              Details</b></label>
+          <hr>
+        </div>
+        <div class="col-md-1"></div>
+        <!-- ============ upload image start ================ -->
+        <div class="col-md-3">
+          <h3><b>Profile Picture</b></h3>
+          <hr>
+          <div class="user-image" id="user_profile_image"></div>
+          <hr>
+          <button type="button" class="" id="profile_image" name="user-img">
+            <input type="file" id="select_img" class="form-control" accept="image/*" onchange="FileUploaded(event)">
+            UPLOAD PHOTO</button>
+          <hr>
+        </div>
+        <!-- ======== upload image end =================== -->
+        <div class="col-md-7" style="border-left:1px solid lightgrey;">
+          <div class="row">
+            <h3><b>Personal Information</b></h3>
+            <hr>
+            <div class="col-md-6">
+              <input type="text" class="" name="first_name" placeholder="First Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="" name="Last_name" placeholder="Last Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="number" class="" name="ID_Number" placeholder="ID Number" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="" name="Email" placeholder="Email" required>
+            </div>
+            <div class="col-md-6">
+              <input type="number" class="" name="Work-Number" placeholder="Work Number" required>
+            </div>
+            <div class="col-md-6">
+              <input type="number" class="" name="Phone-Number" placeholder="Mobile Number" required>
+            </div>
+            <div class="col-md-6">
+              <fieldset required>
+                <p>Gender</p>
+                <label>
+                  <input type="radio" name="female" value="Female">
+                  Female
+                </label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label>
+                  <input type="radio" name="male" value="Male">
+                  Male
+                </label>
+              </fieldset>
+            </div>
+            <div class="col-md-6">
+              <p>Date of Birth</p>
+              <input type="date" class="form-control" name="Birth-Date" placeholder="Date of Birth" required>
+            </div><br><br>
+            <h3><b>Address</b></h3>
+            <hr>
+            <div class="col-md-6">
+              <input type="text" class="" name="Street" placeholder="Street" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="" name="Complex" placeholder="Complex" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="" name="City" placeholder="City/Town" required>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="" name="country" placeholder="Country" required>
+            </div>
+            <div class="col-md-3">
+              <input type="number" class="" name="Code" placeholder="Code" required>
+            </div>
+            <div class="col-md-6">
+              <button type="submit" class="btn btn-primary form-control save">Save Customer</button>
+            </div>
+          </div><br>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </form>
+  </div><br><br>
+
+  {% endblock content %}

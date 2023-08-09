@@ -1,0 +1,352 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+  <br>
+  <br>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')" style="margin-right:3px;"><b><ion-icon
+          name="list-outline"></ion-icon>&nbsp;Services List</b></button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')" style="margin-left: 2px;"><b><ion-icon
+          name="add-circle-outline"></ion-icon>&nbsp;Add Services</b></button>
+  </div>
+
+  <div id="London" class="tabcontent tab1">
+    <div class="row">
+      <div class="col-md-12">
+        <label class="form-control" style="background-color: whitesmoke; border: none;"><b>STEP : SERVICE
+            LIST</b></label>
+      </div>
+      <div class="col-md-12">
+        <div class="list_search">
+          <input type="search" id="searchInput" class="searcher" placeholder="Search...">
+        </div>
+        <div class="list_container" style="height: 60vh; background-color: white;">
+          <div class="list_container" style="overflow: hidden; height: 45vh;">
+            <div class="row">
+              <div class="col-md-12">
+                <label class="form-control" style="background-color: whitesmoke; border: none;">
+                  <u><b style="margin-bottom: 5px;">JOB CARD : JBC20001</b></u>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Customer
+                          Name:</b>
+                        Andisiwe Nomnyama.</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Vehicle Name:</b>
+                        Ford-Shelby Mustang GT-500.</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Repair
+                          Catergory:</b>
+                        Full service</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Service Type:</b>
+                        Paid.</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Amount:</b>
+                        R15 700.00</p>
+                      <br>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Date In:</b>
+                        2023/06/12</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Date Due:</b>
+                        2023/10/17</p><br>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Details :</b>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quasi iusto quam
+                        perferendis,
+                        debitis quidem sint eveniet id! Aut sit eveniet harum? Explicabo animi, vero eveniet cupiditate
+                        totam harum veritatis!</p>
+
+                      <div id="signaturePreview" onclick="openModal()"
+                        style="border: none; max-height: 55px; min-height: 55px; border-bottom: 1px solid black; background-color: white; width: 80%; box-shadow: 0 0 5px lightgrey; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+                        <i>Click here to draw your signature</i>
+                      </div>
+                      <!-- Add a modal -->
+                      <div id="signatureModal" class="modal">
+                        <div class="modal-content">
+                          <u>
+                            <h1>Draw your Signiture</h1>
+                          </u>
+                          <canvas id="signatureCanvas" width="400" height="200"
+                            style="border: 1px solid black;"></canvas>
+                          <br>
+                          <button onclick="saveSignature()" class="btn btn-success">Save</button><br>
+                          <button id="closeBtn" onclick="clearSignature()" class="btn btn-warning">Clear</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="list_container" style="overflow: hidden; height: 45vh;">
+            <div class="row">
+              <div class="col-md-12">
+                <label class="form-control" style="background-color: whitesmoke; border: none;">
+                  <u><b style="margin-bottom: 5px;">JOB CARD : JBC20001</b></u>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Customer
+                          Name:</b>
+                        Andisiwe Nomnyama.</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Vehicle Name:</b>
+                        Ford-Shelby Mustang GT-500.</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Repair
+                          Catergory:</b>
+                        Full service</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Service Type:</b>
+                        Paid.</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Amount:</b>
+                        R15 700.00</p>
+                      <br>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Date In:</b>
+                        2023/06/12</p>
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Date Due:</b>
+                        2023/10/17</p><br>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5">
+                      <p style="padding: 0; margin: 0; background-color: whitesmoke; border: none;"><b>Details :</b>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quasi iusto quam
+                        perferendis,
+                        debitis quidem sint eveniet id! Aut sit eveniet harum? Explicabo animi, vero eveniet cupiditate
+                        totam harum veritatis!</p>
+
+                      <div id="signaturePreview" onclick="openModal()"
+                        style="border: none; max-height: 55px; min-height: 55px; border-bottom: 1px solid black; background-color: white; width: 80%; box-shadow: 0 0 5px lightgrey; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+                        <i>Click here to Sign</i>
+                      </div>
+                      <!-- Add a modal -->
+                      <div id="signatureModal" class="modal">
+                        <div class="modal-content">
+                          <u>
+                            <h1>Draw your Signiture</h1>
+                          </u>
+                          <canvas id="signatureCanvas" width="400" height="200"
+                            style="border: 1px solid black;"></canvas>
+                          <br>
+                          <button onclick="saveSignature()" class="btn btn-success">Save</button><br>
+                          <button id="closeBtn" onclick="clearSignature()" class="btn btn-warning">Clear</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div><br>
+      </div>
+    </div>
+  </div>
+  <div id="Paris" class="tabcontent">
+    <form method="post">{% csrf_token %}
+      <div class="row">
+        <div class="col-md-12">
+          <label class="form-control" style="background-color: whitesmoke; border: none;"><b>STEP : Add Customer
+              Details</b></label>
+          <hr>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Jobcard Number : </b></p>
+              </td>
+              <td>
+                <input type="number" required placeholder="enter job card...">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Customer Name : </b></p>
+              </td>
+              <td>
+                <select name="" class="select" required>
+                  <option value="">-- Select Option --</option>
+                  <option value="New">New</option>
+                  <option value="Used">Used</option>
+                </select>
+              </td>
+              <td>
+                <button class="btn btn-light" type="button"
+                  style="margin-left:5px;margin-bottom: -5px !important;">Add</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Vehicle Name:</b></p>
+              </td>
+              <td>
+                <select name="" class="select" required>
+                  <option value="">-- Select Option --</option>
+                  <option value="New">New</option>
+                  <option value="Used">Used</option>
+                </select>
+              </td>
+              <td>
+                <button class="btn btn-light" type="button"
+                  style="margin-left:5px;margin-bottom: -5px !important;">Add</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Date Due :</b></p>
+              </td>&nbsp;
+              <td>
+                <input type="datetime-local" required>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Title :</b></p>
+              </td>&nbsp;
+              <td>
+                <input type="text" required placeholder="enter title...">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Assign To :</b></p>
+              </td>&nbsp;
+              <td>
+                <select name="" class="select" required>
+                  <option value="">-- Select Option --</option>
+                  <option value="New">New</option>
+                  <option value="Used">Used</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Repair Catergory :</b></p>
+              </td>&nbsp;
+              <td>
+                <select name="" class="select" required>
+                  <option value="">-- Select Option --</option>
+                  <option value="New">New</option>
+                  <option value="Used">Used</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Service Type :</b></p>
+              </td>&nbsp;
+              <td>
+                <fieldset required>
+                  <label>
+                    <table>
+                      <tr>
+                        <td>
+                          <p style="color: black;">Free &nbsp;</p>
+                        </td>
+                        <td>
+                          <input type="radio" name="service-free" value="Free">
+                        </td>
+                      </tr>
+                    </table>
+                  </label>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <label>
+                    <table>
+                      <tr>
+                        <td>
+                          <p style="color: black;">Paid &nbsp;</p>
+                        </td>
+                        <td>
+                          <input type="radio" name="service-paid" value="Paid">
+                        </td>
+                      </tr>
+                    </table>
+                  </label>
+                </fieldset>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Details :</b></p>
+              </td>&nbsp;
+              <td>
+                <textarea required
+                  style="max-height: 87px; min-height: 87px; width: 100%; background-color: whitesmoke; padding: 5px; border: 1px solid lightgrey; border-radius: 5px; outline: none; letter-spacing: 1px;"></textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>Fix Service Charge:</b></p>
+              </td>&nbsp;
+              <td>
+                <input type="" required placeholder="enter fix service charge...">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table style="width: 95%;">
+            <tr>
+              <td style="width: 30%;">
+                <p><b>MOT Test :</b></p>
+              </td>&nbsp;
+              <td>
+                <input type="checkbox" required style="margin-left: -45%;">
+              </td>
+            </tr>
+          </table><br>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <center>
+                <button class="btn btn-primary" type="submit" style="width:100px;">Save</button>&nbsp;
+                <button class="btn btn-warning" type="reset" style="width:100px;">Reset</button>
+              </center>
+            </div>
+            <div class="col-md-4"></div>
+          </div><br>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

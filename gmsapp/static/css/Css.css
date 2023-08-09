@@ -1,0 +1,416 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Times New Roman';
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: none;
+  background-color: whitesmoke;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: white;
+  float: left;
+  box-shadow: 0 0 2px grey;
+  border: 1px solid lightgrey;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  border: 1px solid lightgrey;
+  background-color: white !important;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+}
+
+.tab1 {
+  display: block;
+  background-color: white;
+}
+
+#select_img {
+  position: absolute;
+  cursor: pointer;
+  transform: scale(3);
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+img {
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50%;
+}
+.cot{
+  position: absolute;
+  padding: 5px;
+  border-radius: 3px;
+  width: 30px;
+  height: 20px;
+  border: 1px solid black;
+  top: 4px;
+  left: 63px;
+}
+.select{
+  background-color: whitesmoke; 
+  outline: none; 
+  margin-top: 15px !important;
+  padding: 7px; 
+  border-bottom: 1px solid lightgrey; 
+  border-top: none; 
+  border-left: none; 
+  border-right: none; 
+  width: 100%; 
+}
+
+#user_profile_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5px;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgb(166, 166, 166) !important;
+  background-image: url("../assets/Images/Profile-Images/placeholder.png");
+  border-radius: 50%;
+}
+
+#profile_image {
+  position: relative;
+  border: 1px solid blue !important;
+  padding: 7px;
+  width: 150px;
+  outline: none;
+  background-color: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#profile_image:hover {
+  color: blue;
+}
+
+#profile_image:active {
+  scale: 96%;
+}
+
+#Paris {
+  background-color: white !important;
+}
+
+#Paris form div p {
+  margin-bottom: -3px;
+  margin-top: 10px;
+  color: grey;
+}
+
+#Paris form div input {
+  outline: none !important;
+  font-family: 'Times New Roman';
+  letter-spacing: 1px;
+  padding: 7px;
+  border-radius: 2px;
+  margin-top: 15px;
+  background-color: whitesmoke;
+  border: 1px solid lightgrey;
+  width: 100%;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+#Paris form div .col-md-6 {
+  background-color: white;
+}
+
+#Paris form div .col-md-4 {
+  background-color: white;
+}
+
+#Paris form div .col-md-8 {
+  background-color: white;
+}
+
+#Paris form div .row {
+  background-color: white;
+}
+
+.save {
+  margin-top: 50px;
+}
+
+
+
+/* ================= Dropdown Inputs =============== */
+/* ================================================= */
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the input textbox inside the dropdown */
+.dropdown-input {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Style for the dropdown list */
+.dropdown-list {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 150px;
+  overflow-y: none;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: #fff;
+}
+
+/* Style for list items */
+.dropdown-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Style for the selected item in the list */
+.dropdown-item.highlight {
+  background-color: #f2f2f2;
+}
+
+/* ============== Dropdown input End ================ */
+/* ================================================== */
+
+
+/* ============== VEHICLES START ==================== */
+/* ================================================== */
+#vehicleDescription {
+  max-height: 100px;
+  min-height: 100px;
+}
+
+.Vehicles {
+  align-items: start !important;
+  justify-content: center;
+}
+/* ================= VEHICLES END =================== */
+/* ================================================== */
+
+
+/* ============== PAGE LOADER STARTS =============== */
+/* ================================================= */
+
+.loader-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+
+.loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, transparent 30%, #e5f403);
+  animation: loader 2s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  bottom: 6px;
+  right: 6px;
+  background: #000;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(45deg, transparent, transparent 30%, #e5f403);
+  border-radius: 50%;
+  z-index: 1000;
+  z-index: 1;
+  filter: blur(30px);
+}
+
+/* ================= PAGE LOADER ENDS =============== */
+/* ================================================== */
+
+/* ================= Customers =================== */
+/* =============================================== */
+
+.list_container{
+  padding: 5px;
+  max-height: 52vh;
+  margin-bottom: 5px;
+  background-color: whitesmoke;
+  border:1px solid lightgrey;
+  overflow: auto;
+  border-radius: 5px;
+  font-family: 'Times New Roman';
+  letter-spacing: 1px;
+}
+.list_container table{
+  padding:15px;
+  width: 1700px !important;
+  height: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color:white;
+}
+.list_container table tr{
+  border-bottom: 1px solid lightgrey;
+}
+.list_container table tr th{
+  background-color: #000;
+  color: white;
+  padding: 5px;
+}
+.list_container table tr td{
+  padding: 7px;
+}
+.list_container table tr td button{
+  border-radius: 15px;
+  height: 30px;
+  padding-bottom: 5px;
+  color: white;
+  width: 100px;
+  text-align: center;
+}
+.list_container table tr td img{
+  height: 40px !important;
+  width: 40px !important;
+}
+
+/* =============== Search List =============== */
+.list_search{
+  position: relative;
+  height: 40px;
+  top: 0;
+  right: 0;
+  
+}
+.list_search .searcher{
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  padding-left: 5px;
+  outline: none;
+  letter-spacing: 1px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.list_search select{
+  position: absolute;
+  left: 65px;
+  top: 3px;
+  outline: none;
+  letter-spacing: 1px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+/* ================== Customers End ============= */
+/* ============================================== */
+
+/* ================== Spares ================== */
+/* ============================================ */
+.spare_card{
+  padding: 5px;
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 5px lightgrey;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.spare_card img{
+  border-radius: 10px;
+  height: 138px !important;
+  width:220px !important;
+}
+.spare_card p{
+  right:0px;
+}
+.spare_card button{
+  position: absolute;
+  width: 83px;
+  color: white;
+  background-color: blue;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid lightgrey;
+}
+.spare_card button:active{
+  scale: 99%;
+  color: white;
+}
+.item-link{
+  text-decoration: none;
+  color: black;
+}
+.item-link:hover{
+  text-decoration: none;
+
+}
+
+/* ================= Projects Cards  ============== */
+/* ================================================ */

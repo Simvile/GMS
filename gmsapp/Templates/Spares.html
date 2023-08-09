@@ -1,0 +1,94 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="container">
+  <br>
+  <div class="head form-control" style="background-color:whitesmoke; border: none;">
+    <p style="background-color: whitesmoke; border: none;"><b>Customers :</b></p>
+  </div>
+  <br>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')" style="margin-right:3px;"><b><ion-icon
+          name="list-outline"></ion-icon>&nbsp;Spare Parts</b></button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')" style="margin-left: 2px;"><b><ion-icon
+          name="add-circle-outline"></ion-icon>&nbsp;Add Parts</b></button>
+  </div>
+
+  <div id="London" class="tabcontent tab1">
+    <div class="row">
+      <div class="col-md-12">
+        <label class="form-control" style="background-color: whitesmoke; border: none;"><b>Step 2 : View Spare Parts</b></label>
+      </div>
+      <div class="col-md-12">
+        <div class="list_search">
+          <input type="search" id="searchInput" class="searcher" placeholder="Search...">
+        </div>
+      </div>
+      <hr>
+      <div class="col-md-3"><a class="item-link" href="#">
+        <div class="card spare_card">
+              <img class="thumbnail" src="../static/assets/Images/Profile-Images/IMG-20230516-WA0084.jpg" alt="image">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b>Name</b></p>
+                </div>
+                <div class="col-md-6">
+                  <p><b>Available: 13</b></p>
+                </div>
+              </div>
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="Paris" class="tabcontent">
+    <form action="save" method="post">{% csrf_token %}
+      <div class="row">
+        <div class="col-md-12">
+          <label class="form-control" style="background-color: whitesmoke; border: none;"><b>Step 1 : Add Part Details</b></label>
+          <hr>
+        </div>
+        <div class="col-md-6">
+          <p><b>Name : </b></p>
+          <input type="text" class="" placeholder="Name..." required>
+        </div>
+        <div class="col-md-6">
+          <p><b>Brand:</b></p>
+          <input type="text" class="" placeholder="Brand" required>
+        </div>
+        <div class="col-md-6">
+          <p><b>Part Number</b></p>
+          <input type="number" class="part-number" placeholder="part number..." required>
+        </div>
+        <div class="col-md-3">
+          <p><b>Status</b></p><br>
+          <select name="" class="select" required>
+            <option value="">-- Select Option --</option>
+            <option value="New">New</option>
+            <option value="Used">Used</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <p><b>Dealer</b></p><br>
+          <select name="" class="select" required >
+            <option value="">-- Select Option --</option>
+            <option value="New">Dealer</option>
+            <option value="Used">Off Market</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <p><b>Images (Optional)</b></p>
+          <input type="file" accept="image/*">
+          <hr>
+        </div>
+        <div class="col-md-6"><hr>
+          <button class="btn btn-primary form-control">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+{% endblock content %}
